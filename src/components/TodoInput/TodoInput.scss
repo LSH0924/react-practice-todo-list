@@ -1,4 +1,4 @@
-@import "utils";
+@import "~open-color/open-color";
 
 
 .todo-input{
@@ -27,8 +27,9 @@
         width: 5rem;
         height: 2rem;
         margin-left: 1rem;
-        border: 1px solid $oc-green-7;
-        color: $oc-green-7;
+        border: 1px solid $oc-teal-7;
+        background: $oc-gray-0;
+        color: $oc-teal-7;
         font-weight: 500;
         font-size: 1.1rem;
         // flexbox 로 가운데 정렬
@@ -38,12 +39,12 @@
         cursor: pointer;
         
         &:hover{
-            background: $oc-green-7;
+            background: $oc-teal-7;
             color: white;
         }
 
         &:active{
-            background: $oc-green-8;
+            background: $oc-teal-8;
         }
     }
 }
