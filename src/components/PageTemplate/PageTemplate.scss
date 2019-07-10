@@ -1,0 +1,27 @@
+.page-template{
+    margin : auto 0;
+    margin-top: 5px;
+    width: 500px;
+    background: whitesmoke;
+    box-shadow: 0 3px 6px rgba($color: #000000, $alpha: 0.16)
+                , 0 3px 6px rgba($color: #000000, $alpha: 0.23);
+    padding-top: 2rem;
+
+    // 웹브라우저의 가로 길이가 768px 미만일 때
+    @media(max-width:768px) {
+        margin-top: 1rem;
+        // 양쪽 옆에 1rem씩 여백을 남기고 채운다.
+        width: calc(100% -2rem);
+    }
+
+    h1{
+        text-align: center;
+        font-size: 4rem;
+        font-weight: 300;
+        margin: 0;
+    }
+
+    .content{
+        margin-top: 2rem;
+    }
+}
