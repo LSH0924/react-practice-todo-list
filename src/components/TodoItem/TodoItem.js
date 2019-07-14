@@ -20,7 +20,11 @@ class TodoItem extends Component {
         />
         {/* props를 설정할 때 아무 값도 설정하지 않으면 true 를 넣은것과 같은 취급을 한다. */}
         <label className={cx("text", { done })}>{children}</label>
-        <button className={cx("delete")} onClick={onRemove}>
+        <button className={cx("delete")} onClick={(e)=>{
+          onRemove();
+          // 이벤트 버블링 방지
+          e.stopPropagation();
+        }}>
           DELETE
         </button>
       </div>
