@@ -10,13 +10,19 @@ class App extends Component {
     input : "", // input 에 입력한 값
     todos : [{
       id: "0",
-      constents: "리액트 공부",
+      contents: "리액트 공부",
       done: true
     },{
       id: "1",
-      constents: "TodoList 만들기 두번째...",
+      contents: "TodoList 만들기 두번째...",
       done: false
     }]
+  }
+
+  // Key 로 사용할 id값을 반환한다.
+  currentId = 1;
+  getId = () => {
+    return ++this.currentId;
   }
 
   handleChange = (e) => {
@@ -26,12 +32,29 @@ class App extends Component {
     });
   }
 
+  handleInsert = () => {
+    const {input, todos} = this.state;
+    const item = {
+      id: this.getId(),
+      contents: input,
+      done: false
+    }
+    
+    this.setState({
+      input : "",
+      todos: [...todos, item]
+    });
+  }
+
   render() {
     const {input, todos} = this.state;
-    const {handleChange} = this;
+    const {handleChange, handleInsert} = this;
     return (
       <PageTemplate>
-        <TodoInput onChange={handleChange} value={input}/>
+        <TodoInput 
+        onChange={handleChange} 
+        value={input} 
+        onInsert={handleInsert}/>
         <TodoList children={todos}/>
       </PageTemplate>
     );

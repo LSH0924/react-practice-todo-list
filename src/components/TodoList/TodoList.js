@@ -5,9 +5,11 @@ import TodoItem from "../TodoItem";
 class TodoList extends Component {
 
   render() {
-    const {children} = this.props;
+    const {children, onInsert} = this.props;
     const childrenList = children.map(item => 
-      <TodoItem key={item.id} done={item.done}>{item.constents}</TodoItem>
+      <TodoItem key={item.id} done={item.done} onInsert={onInsert}>
+        {item.contents}
+      </TodoItem>
     );
     return (
       <div>
