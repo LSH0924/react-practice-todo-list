@@ -7,7 +7,16 @@ import TodoList from "./TodoList";
 class App extends Component {
 
   state = {
-    input : "" // input 에 입력한 값
+    input : "", // input 에 입력한 값
+    todos : [{
+      id: "0",
+      constents: "리액트 공부",
+      done: true
+    },{
+      id: "1",
+      constents: "TodoList 만들기 두번째...",
+      done: false
+    }]
   }
 
   handleChange = (e) => {
@@ -18,12 +27,12 @@ class App extends Component {
   }
 
   render() {
-    const {input} = this.state;
+    const {input, todos} = this.state;
     const {handleChange} = this;
     return (
       <PageTemplate>
         <TodoInput onChange={handleChange} value={input}/>
-        <TodoList />
+        <TodoList children={todos}/>
       </PageTemplate>
     );
   }
