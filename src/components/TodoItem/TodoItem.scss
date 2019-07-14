@@ -1,0 +1,47 @@
+@import "../../styles/utils";
+
+.todo-item{
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  &:nth-child(odd){
+    background: $oc-white;
+  }
+
+  .tick{
+    margin-right: 1rem;
+  }
+
+  .text{
+    flex: 1;
+    word-break: break-all;
+
+    &.done{
+      text-decoration: line-through;
+    }
+  }
+
+  .delete{
+    margin-left: 1rem;
+    color: $oc-red-7;
+    font-size: 0.8rem;
+
+    &:hover{
+      color: $oc-white;
+      font-weight: bolder;
+      background: $oc-red-5;
+      border: 1px solid $oc-red-5;
+    }
+  }
+
+  &::hover{
+    background: $oc-gray-1;
+  }
+}
+
+// 같은 클래스 이름을 가진 컴포넌트들이 붙어있으면 뒤쪽 컴포넌트에 스타일주기?
+.todo-item + .todo-item{
+  border-top: 1px solid $oc-gray-1;
+}
