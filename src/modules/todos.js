@@ -47,13 +47,14 @@ export default handleActions(
     },
     "todos/TOGGLE": (state, action) => {
       // 액션으로 넘어온 값이 무슨 값인지 명확하게 알려주기 위해 별칭을 사용한다.
-      const { payload: index } = action;
-      // state의 index번째 객체 안의 done 값을 찾는다.
+      const { payload: id } = action;
+      const index = state.findIndex(item => item.get("id") === id);
       // 찾은 값을 변경하는 함수
       return state.updateIn([index, "done"], done => !done);
     },
     "todos/REMOVE": (state, action) => {
-      const { payload: index } = action;
+      const { payload: id } = action;
+      const index = state.findIndex(item => item.get("id") === id);
       return state.delete(index);
     }
   },
