@@ -1,5 +1,5 @@
 import { Map } from "immutable";
-import { handleActions, createActions } from "redux-actions";
+import { handleActions, createAction } from "redux-actions";
 
 // 액션 타입 선언
 // 문자열 앞부분에 리듀서 이름을 적어준다.
@@ -7,7 +7,7 @@ import { handleActions, createActions } from "redux-actions";
 const SET_INPUT = "input/SET_INPUT";
 
 // 액션 타입 생성 함수
-export const setInput = createActions(SET_INPUT);
+export const setInput = createAction(SET_INPUT);
 
 // 리듀서의 초기 상태 정의하기
 const initialState = Map({
