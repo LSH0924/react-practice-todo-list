@@ -1,18 +1,15 @@
-import React, { Component } from "react";
+import React from "react";
 
-import PageTemplate from "./PageTemplate";
-import TodoInputContainer from "../containers/TodoInputContainer";
-import TodoListContainer from "../containers/TodoListContainer";
+import {Route} from 'react-router-dom';
+import {Home, About, TodoList} from '../pages'
 
-class App extends Component {
-  render() {
+const App = () => {
     return (
-      <PageTemplate>
-        <TodoInputContainer />
-        <TodoListContainer />
-      </PageTemplate>
+      <div>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/about" component={About} />
+        <Route exact path="/todo" component={TodoList} />
+      </div>
     );
-  }
 }
-
 export default App;
