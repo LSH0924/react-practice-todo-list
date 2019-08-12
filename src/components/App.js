@@ -2,15 +2,16 @@ import React from "react";
 
 import {Route} from 'react-router-dom';
 import Menu from './Menu';
-import {Home, About, TodoList} from '../pages'
+import {Home, About, TodoList, Posts} from '../pages'
 
 const App = () => {
     return (
       <div>
         <Menu />
         <Route exact path="/" component={Home} />
-        <Route exact path="/about/:name?" component={About} />
-        <Route exact path="/todo" component={TodoList} />
+        <Route path="/about/:name?" component={About} />
+        <Route path="/todo" component={TodoList} />
+        <Route path="/post" component={Posts} />
       </div>
     );
 }
