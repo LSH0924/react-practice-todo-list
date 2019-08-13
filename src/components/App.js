@@ -2,14 +2,12 @@ import React from "react";
 
 import {Route} from 'react-router-dom';
 import Menu from './Menu';
-import {Home, About, TodoList, Posts} from '../pages'
-import AsyncSplit from "./AsyncSplit";
+import {Home, About, TodoList, Posts} from 'pages/index.async.js'
 
 const App = () => {
     return (
       <div>
         <Menu />
-        <AsyncSplit/>
         <Route exact path="/" component={Home} />
         <Route path="/about/:name?" component={About} />
         <Route path="/todo" component={TodoList} />
